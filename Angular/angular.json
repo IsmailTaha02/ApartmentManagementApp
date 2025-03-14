@@ -25,10 +25,6 @@
                 "glob": "**/*",
                 "input": "public"
               }
-<<<<<<< HEAD
-              
-=======
->>>>>>> 05c252d67367c7e9626d7a87bac2f0c0122f73b3
             ],
             "styles": [
               "src/styles.css"
