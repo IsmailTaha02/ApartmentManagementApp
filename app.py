@@ -1,40 +1,3 @@
-from flask import Flask, jsonify
-<<<<<<< HEAD
-from Classes.User import User  # Import User model
-from Classes.Apartment import Apartment  # Import Apartment model
-from Classes.config import configure_app, db  # Import configure_app from config.py
-
-app = Flask(__name__)
-
-# Call the configure_app function to set up the app
-configure_app(app)
-=======
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
-from Classes.User import User, db  # Import User and db
-from flask_cors import CORS
-
-app = Flask(__name__)
-
-# Configure the MySQL database connection
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root@localhost/ApartmentManagementDB'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-CORS(app)  # Enable CORS for all routes
-
-# Initialize the database
-db.init_app(app)  # Use init_app to initialize db with the app
-
-migrate = Migrate(app, db)
->>>>>>> 05c252d67367c7e9626d7a87bac2f0c0122f73b3
-
-# Create a route to test the connection
-@app.route('/users')
-def get_users():
-    users = User.query.limit(5).all()
-    return jsonify([user.full_name for user in users])
-
-<<<<<<< HEAD
 from flask import Flask, jsonify, request
 from Classes.User import User  # Import User model
 from Classes.Apartment import Apartment  # Import Apartment model
@@ -100,7 +63,3 @@ def get_apartments():
 
 if __name__ == '__main__':
     app.run(debug=True)
-=======
-if __name__ == '__main__':
-    app.run(debug=True)
->>>>>>> 05c252d67367c7e9626d7a87bac2f0c0122f73b3
