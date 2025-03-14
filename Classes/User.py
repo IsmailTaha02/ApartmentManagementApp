@@ -1,9 +1,8 @@
-from flask_sqlalchemy import SQLAlchemy
-
-db = SQLAlchemy()
+from Classes.config import db  # Import db from db.py
 
 class User(db.Model):
-    __tablename__ = 'users'  # Explicitly define the table name
+    __tablename__ = 'users'
+
     id = db.Column(db.BigInteger, primary_key=True)
     full_name = db.Column(db.Text, nullable=False)
     email = db.Column(db.Text, unique=True, nullable=False)
